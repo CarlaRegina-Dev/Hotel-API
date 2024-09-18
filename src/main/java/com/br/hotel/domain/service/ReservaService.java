@@ -1,7 +1,5 @@
 package com.br.hotel.domain.service;
 
-import com.br.hotel.controller.dto.ReservaResquest;
-import com.br.hotel.domain.model.ListaReserva;
 import com.br.hotel.domain.model.Reserva;
 import org.springframework.stereotype.Service;
 

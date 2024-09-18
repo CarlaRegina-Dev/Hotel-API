@@ -10,6 +10,7 @@ import lombok.*;
 public class Usuario {
 
     private String nome;
+    private String cpf;
     private String email;
     private Integer idade;
     private String telefone;
@@ -28,5 +29,4 @@ public class Usuario {
         private String cidade;
         private String pais;
     }
-
 }

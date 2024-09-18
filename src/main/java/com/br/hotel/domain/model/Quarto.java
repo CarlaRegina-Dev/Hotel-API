@@ -13,7 +13,4 @@ import java.time.LocalDate;
 public class Quarto {
 
     private String tipo;
-    private LocalDate checkin;
-    private LocalDate checkout;
-    private BigDecimal valor;
 }
