@@ -10,7 +10,7 @@ import lombok.Setter;
 @Builder
 @Entity
 @Table(name = "ENDERECOS")
-public class Endereco {
+public class EnderecoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,5 +29,5 @@ public class Endereco {
     private String pais;
 
     @OneToOne(mappedBy = "endereco") // Relacionamento bidirecional
-    private Usuario usuario;
+    private UsuarioEntity usuario;
 }

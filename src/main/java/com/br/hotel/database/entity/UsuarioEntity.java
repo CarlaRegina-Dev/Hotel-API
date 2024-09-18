@@ -10,7 +10,7 @@ import lombok.Setter;
 @Builder
 @Entity
 @Table(name = "USUARIOS")
-public class Usuario {
+public class UsuarioEntity {
 
     @Column(name = "NOME", length = 500, nullable = false)
     private String nome;
@@ -25,5 +25,5 @@ public class Usuario {
 
     @OneToOne(cascade = CascadeType.ALL) // Define o relacionamento One-to-One
     @JoinColumn(name = "endereco_id")   // Define a chave estrangeira
-    private Endereco endereco;
+    private EnderecoEntity endereco;
 }

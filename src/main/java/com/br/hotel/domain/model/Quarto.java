@@ -13,4 +13,6 @@ import java.time.LocalDate;
 public class Quarto {
 
     private String tipo;
+    private Integer numero;
+    private Integer andar;
 }

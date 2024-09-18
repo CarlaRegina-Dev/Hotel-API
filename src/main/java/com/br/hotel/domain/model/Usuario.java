@@ -15,18 +15,4 @@ public class Usuario {
     private Integer idade;
     private String telefone;
     private Endereco endereco;
-
-    @Getter
-    @Setter
-    @Builder
-    @AllArgsConstructor
-    @NoArgsConstructor
-    private static  class Endereco {
-        private String rua;
-        private Integer numero;
-        private String cep;
-        private String bairro;
-        private String cidade;
-        private String pais;
-    }
 }

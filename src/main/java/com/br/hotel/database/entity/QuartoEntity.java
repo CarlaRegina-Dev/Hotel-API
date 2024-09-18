@@ -10,11 +10,15 @@ import lombok.Setter;
 @Builder
 @Entity
 @Table(name = "QUARTO")
-public class Quarto {
+public class QuartoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
     @Column(name = "TIPO", length = 20, nullable = false)
     private String tipo;
+    @Column(name = "NUMERO")
+    private Integer numero;
+    @Column(name = "ANDAR")
+    private Integer andar;
 }
