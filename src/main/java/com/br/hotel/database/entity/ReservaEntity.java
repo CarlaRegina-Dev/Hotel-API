@@ -18,12 +18,13 @@ public class ReservaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
-    @Column(name = "NOME", length = 20)
-    @Temporal(value = TemporalType.TIMESTAMP)
+
+    @Column(name = "CHECKIN")
     private LocalDate checkin;
-    @Column(name = "NOME", length = 20)
-    @Temporal(value = TemporalType.TIMESTAMP)
+
+    @Column(name = "CHEKOUT")
     private LocalDate checkout;
+
     @Column(name = "VALOR",precision = 100, scale = 2, nullable = false)
     private BigDecimal valor;
 }

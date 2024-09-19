@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb  # URL de conexão ao banco H2 (em memória)
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    platform: h2
+  h2:
+    console:
+      enabled: true  # Habilita o console web do H2
+      path: /h2
+  jpa:
+    hibernate:
+      ddl-auto: update  # Atualiza o esquema de banco automaticamente
+    show-sql: true  # Ex
