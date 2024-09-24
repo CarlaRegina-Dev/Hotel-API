@@ -1,28 +1,37 @@
 package com.br.hotel.controller;
 
 import com.br.hotel.controller.dto.UsuarioRequest;
+import com.br.hotel.domain.model.StatusResponse;
 import com.br.hotel.domain.service.UsuarioService;
 import com.br.hotel.mapper.UsuarioMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
-@RequestMapping("/v1/usuario")
+@RequestMapping("/api/usuario")
 public class UsuarioController {
 
-    @Autowired
-    UsuarioService service;
+    private  final UsuarioService service;
+    private final UsuarioMapper mapper;
 
-    UsuarioMapper mapper;
+
+    public UsuarioController (UsuarioService service, UsuarioMapper mapper){
+        this.service = service;
+        this.mapper = mapper;
+    }
 
 
     @PostMapping
-    public HttpStatus inserir(UsuarioRequest request){
-        service.incluirUsuario(mapper.toRequestIncluir(request));
+    public ResponseEntity<StatusResponse> inserir(UsuarioRequest request){
+        var entrada = mapper.toRequestIncluir(request);
+        service.incluirUsuario(entrada);
 
-        return HttpStatus.CREATED;
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

@@ -7,24 +7,11 @@ import lombok.*;
 @Builder
 public record UsuarioRequest(
         String nome,
+        String cpf,
         String email,
         Integer idade,
-        String telefone,
-        Endereco endereco
-) {
-
-    @Getter
-    @Setter
-    @Builder
-    public static record Endereco (
-            String rua,
-            Integer numero,
-            String cep,
-            String bairro,
-            String cidade,
-            String pais
-    ){}
-}
+        String telefone
+) { }
 
 
 

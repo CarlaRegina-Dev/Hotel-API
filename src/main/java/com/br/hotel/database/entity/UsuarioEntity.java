@@ -1,14 +1,14 @@
 package com.br.hotel.database.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "USUARIOS")
 public class UsuarioEntity {
 
@@ -28,7 +28,4 @@ public class UsuarioEntity {
     @Column(name = "TELEFONE", length = 9, nullable = false)
     private String telefone;
 
-    @OneToOne(cascade = CascadeType.ALL) // Define o relacionamento One-to-One
-    @JoinColumn(name = "endereco_id")   // Define a chave estrangeira
-    private EnderecoEntity endereco;
 }
