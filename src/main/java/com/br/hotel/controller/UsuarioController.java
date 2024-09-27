@@ -1,6 +1,7 @@
 package com.br.hotel.controller;
 
 import com.br.hotel.controller.dto.UsuarioRequest;
+import com.br.hotel.controller.exception.ResourceNotFoundException;
 import com.br.hotel.domain.model.StatusResponse;
 import com.br.hotel.domain.service.UsuarioService;
 import com.br.hotel.mapper.UsuarioMapper;
@@ -8,13 +9,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api/usuario")
+@RequestMapping(value = "/api/usuarios")
 public class UsuarioController {
 
     private  final UsuarioService service;
@@ -26,9 +25,14 @@ public class UsuarioController {
         this.mapper = mapper;
     }
 
+    @GetMapping
+    public String exibir (){
+        return "hello word!";
+    }
 
-    @PostMapping
-    public ResponseEntity<StatusResponse> inserir(UsuarioRequest request){
+
+    @PostMapping("/inclusao")
+    public ResponseEntity<StatusResponse> inserir(@RequestBody  UsuarioRequest request){
         var entrada = mapper.toRequestIncluir(request);
         service.incluirUsuario(entrada);
 

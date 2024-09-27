@@ -13,3 +13,12 @@ spring:
     hibernate:
       ddl-auto: update  # Atualiza o esquema de banco automaticamente
     show-sql: true  # Ex
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+

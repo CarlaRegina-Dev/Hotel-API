@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.br.hotel.mapper")
+//@ComponentScan(basePackages = "com.br.hotel.mapper")
 public class HotelBelaVistaApiApplication {
 
 	public static void main(String[] args) {
